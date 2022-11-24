@@ -23,7 +23,7 @@ function Card({movie}) {
         </SkeletonTheme>
       </div>
       :
-      <Link to={`movie/${movie.id}`} className="link__router">
+      <Link to={`/movie/${movie.id}`} className="link__router">
         <div className="cards">
           <img src={`https://image.tmdb.org/t/p/original${movie ? movie.poster_path : ""}`} alt="" className="cards__img" />
           <div className="cards__overlay">
