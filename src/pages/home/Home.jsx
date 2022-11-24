@@ -5,6 +5,8 @@ import "./home.css"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import { Link } from 'react-router-dom';
+import MovieList from '../../components/movieList/MovieList';
+
 
 function Home() {
 
@@ -13,7 +15,6 @@ function Home() {
   useEffect(() => {
     const response = axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_API_KEY}&language=en-US&page=1`)
       .then(function (response) {
-        // handle success
         setPopularMovie(response.data.results);
       })
     })
@@ -56,6 +57,7 @@ function Home() {
             ))
           }
         </Carousel>
+        <MovieList />
       </div>
     </>
   )
